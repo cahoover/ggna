@@ -1,9 +1,9 @@
 body {
-    background-color: #fff;
+    background-image: linear-gradient(to bottom, rgba(55, 125, 255, 0.01) 0%, rgba(55, 125, 255, 0.15) 100%);
 }
 @screen lg {
     body {
-        background-image: url('/img/zigs-top-right.svg'), url('/img/zigs-bottom-left.svg');
+        background-image: linear-gradient(to bottom, rgba(55, 125, 255, 0.02) 0%, rgba(55, 125, 255, 0.15) 100%), url('/img/dots-big.svg'), url('/img/dots-3.svg');
         background-repeat: no-repeat;
         background-position: calc(100% - 8px) top, 80px calc(100% - 160px);
     }

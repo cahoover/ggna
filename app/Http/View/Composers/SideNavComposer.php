@@ -8,36 +8,31 @@ class SideNavComposer
     {
         $view->with('pages', [
             [
-                'title' => 'Documentation',
+                'title' => 'Analytics',
                 'icon' => 'book',
                 'url' => '/',
                 'active' => empty(request()->segments())
-                    || ! in_array(request()->segment(1), ['screencasts', 'knowledge-base', 'cookbook', 'extending']),
+                    || ! in_array(request()->segment(1), ['google-ads', 'blog', 'cookbook']),
             ],
             [
-                'title' => 'Screencasts',
+                'title' => 'Google Ads',
                 'icon' => 'tv',
-                'url' => '/screencasts',
-                'active' => request()->segment(1) === 'screencasts',
+                'url' => '/google-ads',
+                'active' => request()->segment(1) === 'google-ads',
             ],
             [
-                'title' => 'Knowledge Base',
-                'icon' => 'help-desk',
-                'url' => '/knowledge-base',
-                'active' => request()->segment(1) === 'knowledge-base',
-            ],
-            // [
-            //     'title' => 'Cookbook',
-            //     'icon' => 'cookbook',
-            //     'url' => '/cookbook',
-            //     'active' => request()->segment(1) === 'cookbook',
-            // ],
-            [
-                'title' => 'Extending Statamic',
+                'title' => 'Blog',
                 'icon' => 'tetris',
-                'url' => '/extending',
-                'active' => request()->segment(1) === 'extending',
+                'url' => '/knowledge-base',
+                'active' => request()->segment(1) === 'blog',
             ],
+            [
+                   'title' => 'Cookbook',
+                   'icon' => 'cookbook',
+                   'url' => '/cookbook',
+                   'active' => request()->segment(1) === 'cookbook',
+            ],
+
         ]);
     }
 }

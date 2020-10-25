@@ -17,7 +17,7 @@
     li a {
         @apply text-grey-800 text-sm py-1 relative z-10 inline-block;
         &:hover {
-            @apply text-pink-hot;
+            @apply text-purple;
         }
     }
 
@@ -37,5 +37,5 @@
 }
 
 .toc li.active a:before {
-    @apply bg-mint;
+    @apply bg-highlight;
 }
