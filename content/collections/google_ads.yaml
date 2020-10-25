@@ -1,0 +1,18 @@
+title: 'Google Ads'
+template: page
+layout: layout
+blueprints:
+  - page
+revisions: false
+route: 'google-ads/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+structure:
+  root: false
+  tree:
+    -
+      entry: 55e2b397-fe18-4ab7-b861-e02a75bb4b7d
+    -
+      entry: e19be43c-9cb2-45f1-b19e-4cd3ef91447d

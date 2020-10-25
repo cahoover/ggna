@@ -1,0 +1,15 @@
+title: Blogs
+template: page
+layout: layout
+blueprints:
+  - page
+  - entry_link
+taxonomies:
+  - tags
+revisions: false
+route: 'blog/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

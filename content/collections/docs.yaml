@@ -1,8 +1,8 @@
 title: Docs
-route: '{{ parent_uri }}/{{ slug }}'
-default_status: published
 template: page
 layout: layout
 blueprints:
   - page
 revisions: false
+route: '{{ parent_uri }}/{{ slug }}'
+sort_dir: asc
