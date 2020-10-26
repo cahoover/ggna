@@ -2,5 +2,5 @@ title: Analytics
 template: page
 layout: layout
 revisions: false
-route: '{{ parent_uri }}/{{ slug }}'
+route: 'analytics/{{ slug }}'
 sort_dir: asc
