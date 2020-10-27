@@ -1,4 +1,6 @@
 title: Docs
+collections:
+  - analytics
 tree:
   -
     title: 'Getting Started'
