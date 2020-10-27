@@ -1,3 +1,6 @@
 title: Cookbook
 collections:
   - cookbook
+tree:
+  -
+    title: Introduction
