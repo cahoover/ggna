@@ -1,6 +1,8 @@
 title: pages
 template: home
 layout: layout
+blueprints:
+  - page
 revisions: false
 route: '{parent_uri}/{slug}'
 sort_dir: asc
