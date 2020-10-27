@@ -1,0 +1,16 @@
+<header class="markdown pb-12 mb-12 border-b-2 border-grey-300">
+    <h1>Blog</h1>
+    <p class="text-xl">
+        Articles, tips, tricks, and other helpful content to help answer those hard-to-categorize questions.
+        Godspeed on your quest for answers!
+    </p>
+</header>
+
+<article class="pb-8">
+    <ul>
+    {{ collection:blog }}
+        <li class="mb-2 pb-2 border-b border-grey-300"><a href="{{ url }}" class="text-lg hover:text-pink-hot font-mono">{{ title }}</a></li>
+    {{ /collection:blog }}
+    </ul>
+    <p class="text-sm mt-8 italic text-grey-600 font-mono">Many more articles coming soon!</p>
+</article>
