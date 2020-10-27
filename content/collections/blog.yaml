@@ -1,8 +1,6 @@
 title: Blogs
 template: page
 layout: layout
-blueprints:
-  - page
 taxonomies:
   - tags
 revisions: false
