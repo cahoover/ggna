@@ -1,10 +1,12 @@
 ---
 title: Addons
-id: 5bb3e677-8b9c-4e77-be24-5fefec9c1af0
-intro: Developers can easily build new features that are compatible with everyone’s Statamic installations. Addons can then be easily shared or sold to others to let them extend their Statamic installation.
+intro: 'Developers can easily build new features that are compatible with everyone’s Statamic installations. Addons can then be easily shared or sold to others to let them extend their Statamic installation.'
 stage: 3
+template: page
+updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
+updated_at: 1603836902
+id: 5bb3e677-8b9c-4e77-be24-5fefec9c1af0
 ---
-
 ## Finding addons
 
 You can browse the [Statamic Marketplace](https://statamic.com/addons) to find addons, or use the "Addons" section inside your Statamic Control Panel.
@@ -18,6 +20,11 @@ If you want to do it yourself, you can use Composer directly on the command line
 ``` bash
 composer require vendor/package
 ```
+<figure>
+    <img src="/img/assets.png" alt="Assets browser">
+    <figcaption>The asset browser browsin' some assets.</figcaption>
+</figure>
+
 
 ## Creating addons
 
