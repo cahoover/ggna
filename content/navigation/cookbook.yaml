@@ -1,6 +1,7 @@
 title: Cookbook
 collections:
   - cookbook
+  - analytics
 tree:
   -
     title: Introduction
