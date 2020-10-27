@@ -11,15 +11,13 @@
         {{ /pages }}
     </div>
 
-    {{ if segment_1 === 'extending' }}
-        {{ partial:side-nav-main for="collection::extending-docs" }}
+    {{ if segment_1 === 'cookbook' }}
+        {{ partial:side-nav-main for="cookbook" }}
     {{ elseif segment_1 === 'google-ads' }}
         {{ partial:side-nav-main for="google-ads" }}
-    {{ elseif segment_1 === 'knowledge-base' }}
-        {{ partial:side-nav-knowledge-base }}
     {{ elseif segment_1 === 'blog' }}
         {{ partial:side-nav-blog }}
     {{ else }}
-        {{ partial:side-nav-main for="docs" }}
+        {{ partial:side-nav-main for="analytics" }}
     {{ /if }}
 </nav>

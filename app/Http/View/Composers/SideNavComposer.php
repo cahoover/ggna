@@ -21,17 +21,18 @@ class SideNavComposer
                 'active' => request()->segment(1) === 'google-ads',
             ],
             [
-                'title' => 'Blog',
-                'icon' => 'tetris',
-                'url' => '/knowledge-base',
-                'active' => request()->segment(1) === 'blog',
-            ],
-            [
                    'title' => 'Cookbook',
                    'icon' => 'cookbook',
                    'url' => '/cookbook',
                    'active' => request()->segment(1) === 'cookbook',
             ],
+            [
+                'title' => 'Blog',
+                'icon' => 'tetris',
+                'url' => '/blog',
+                'active' => request()->segment(1) === 'blog',
+            ],
+
 
         ]);
     }
