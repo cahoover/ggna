@@ -3,7 +3,6 @@ template: page
 layout: layout
 blueprints:
   - page
-  - entry_link
 taxonomies:
   - tags
 revisions: false
