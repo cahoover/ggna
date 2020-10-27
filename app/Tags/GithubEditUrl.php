@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 class GithubEditUrl extends \Statamic\Tags\Tags
 {
-    private $endpoint = 'https://github.com/statamic/docs/blob/master/content/';
+    private $endpoint = 'https://github.com/cahoover/ggna/blob/master/content/';
 
     public function index()
     {
