@@ -88,9 +88,9 @@
     }
 
     a {
-        @apply underline text-pink-hot font-medium;
+        @apply underline text-purple font-medium;
         &:hover {
-            @apply text-pink-bright;
+            @apply text-purple-hot;
         }
     }
 

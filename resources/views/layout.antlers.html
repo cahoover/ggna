@@ -33,7 +33,7 @@
     {{ unless response_code == 404 }}
     <div class="hidden lg:block lg:w-1/4 xl:w-1/5 px-8 pt-1 relative">
         <nav class="side-nav sticky top-16">
-            {{ if segment_1 !== "knowledge-base" }}
+            {{ if segment_1 !== "blog" }}
             <h5>On This Page</h5>
             {{ content | noparse | toc }}
             {{ /if }}
@@ -43,25 +43,10 @@
 </div>
 
 <div id="site-footer" class="bg-blue-darkest text-blue-lightest font-display italic antialiased text-sm mt-8 p-8 flex items-center justify-between">
-    <p>Copyright {{ now format="Y" }} Statamic • <b>Powered by {{ powered_by sort="random" limit="1" }}{{ value }}{{ /powered_by }}</b></p>
+    <p>Copyright {{ now format="Y" }} Aperture Interactive • <b>Powered by {{ powered_by sort="random" limit="1" }}{{ value }}{{ /powered_by }}</b></p>
     {{ partial:social }}
 </div>
 <script src="{{ mix src='js/app.js' }}"></script>
-<!-- Fathom - simple website analytics - https://usefathom.com -->
-<script>
-(function(f, a, t, h, o, m){
-a[h]=a[h]||function(){
-(a[h].q=a[h].q||[]).push(arguments)
-};
-o=f.createElement('script'),
-m=f.getElementsByTagName('script')[0];
-o.async=1; o.src=t; o.id='fathom-script';
-m.parentNode.insertBefore(o,m)
-})(document, window, 'https://cdn.usefathom.com/tracker.js', 'fathom');
-fathom('set', 'siteId', 'LGYIPVOA');
-fathom('trackPageview');
-</script>
-<!-- / Fathom -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script type="text/javascript">docsearch({
 algoliaOptions: {
