@@ -1,8 +1,6 @@
 title: 'Google Ads'
 template: page
 layout: layout
-blueprints:
-  - page
 revisions: false
 route: 'google-ads/{slug}'
 sort_dir: asc
