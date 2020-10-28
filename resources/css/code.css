@@ -8,8 +8,8 @@
 
 pre[class*="language-"] {
 	@apply font-mono;
-	color: #f92aad;
-	text-shadow: 0 0 2px #100c0f, 0 0 5px #dc078e33, 0 0 10px #fff3;
+	color: #ffffff;
+	text-shadow: none;
 	background: none;
 	font-size: 1em;
 	text-align: left;
@@ -99,8 +99,8 @@ pre > code {
 
 	.token.constant,
 	.token.symbol {
-		color: #f92aad;
-		text-shadow: 0 0 2px #100c0f, 0 0 5px #dc078e33, 0 0 10px #fff3;
+		color: #ffffff;
+		text-shadow: none;
 	}
 
 	.token.important,
