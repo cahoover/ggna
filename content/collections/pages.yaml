@@ -1,8 +1,6 @@
 title: pages
 template: page
 layout: layout
-blueprints:
-  - page
 revisions: false
 route: '{parent_uri}{slug}'
 sort_dir: asc
@@ -14,3 +12,5 @@ structure:
   tree:
     -
       entry: home
+    -
+      entry: b785a320-1b83-48eb-b8bc-c5770f3caecb
