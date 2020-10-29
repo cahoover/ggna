@@ -1,6 +1,9 @@
-title: 'Analytics'
+title: Analytics
 template: page
 layout: layout
 revisions: false
 route: 'analytics/{{ slug }}'
 sort_dir: asc
+inject:
+  seo:
+    title: '@seo:Title'
