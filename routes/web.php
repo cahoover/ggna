@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::statamic('/', 'home', ['load' => '/pages/home']);
-Route::statamic('google-ads', 'google-ads.index', ['load' => '/pages/google-ads']);
-Route::statamic('cookbook', 'cookbook.index', ['load' => '/pages/cookbook']);
+Route::statamic('/', 'home', ['load' => '/']);
+Route::statamic('analytics', 'analytics.index', ['load' => '/analytics']);
+Route::statamic('google-ads', 'google-ads.index', ['load' => '/google-ads']);
+Route::statamic('cookbook', 'cookbook.index', ['load' => '/cookbook']);
 Route::statamic('blog', 'blog.index');
 Route::statamic('search-results', 'search');
 // Route::permanentRedirect('collections-and-entries', 'collections');

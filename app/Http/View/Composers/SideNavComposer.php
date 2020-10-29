@@ -10,9 +10,8 @@ class SideNavComposer
             [
                 'title' => 'Analytics',
                 'icon' => 'book',
-                'url' => '/',
-                'active' => empty(request()->segments())
-                    || ! in_array(request()->segment(1), ['google-ads', 'blog', 'cookbook']),
+                'url' => '/analytics',
+                'active' => request()->segment(1) === 'analytics',
             ],
             [
                 'title' => 'Google Ads',
@@ -21,10 +20,10 @@ class SideNavComposer
                 'active' => request()->segment(1) === 'google-ads',
             ],
             [
-                   'title' => 'Cookbook',
-                   'icon' => 'cookbook',
-                   'url' => '/cookbook',
-                   'active' => request()->segment(1) === 'cookbook',
+                'title' => 'Cookbook',
+                'icon' => 'cookbook',
+                'url' => '/cookbook',
+                'active' => request()->segment(1) === 'cookbook',
             ],
             [
                 'title' => 'Blog',
