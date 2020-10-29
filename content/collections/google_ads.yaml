@@ -1,9 +1,9 @@
 title: 'Google Ads'
 template: page
 layout: layout
-revisions: false
 taxonomies:
   - categories
+revisions: false
 route: 'google-ads/{slug}'
 date_behavior:
   past: public

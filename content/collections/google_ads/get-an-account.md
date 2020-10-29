@@ -2,7 +2,9 @@
 title: 'Get an account'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1603934088
+updated_at: 1603934433
+categories:
+  - google-ads-101
 id: 2bfc8075-af36-47ac-8dcf-525905059176
 ---
 AdWords is Google's advertising service. Through it, a business can display ads in Google's search results when someone makes a relevant search. It's cost effective because you don't pay to display your ad. You only pay when someone clicks on your ad. 
