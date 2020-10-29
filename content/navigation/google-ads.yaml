@@ -1,4 +1,6 @@
 title: Google-ads
+collections:
+  - google_ads
 tree:
   -
     title: 'The basics'
