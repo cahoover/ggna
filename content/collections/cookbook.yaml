@@ -1,7 +1,10 @@
 title: Cookbook
-revisions: false
+template: page
+layout: layout
 blueprints:
   - page
+revisions: false
+route: 'cookbook/{slug}'
 date_behavior:
   past: public
   future: private
