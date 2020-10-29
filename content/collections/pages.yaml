@@ -11,6 +11,4 @@ structure:
   root: true
   tree:
     -
-      entry: home
-    -
       entry: b785a320-1b83-48eb-b8bc-c5770f3caecb
