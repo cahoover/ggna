@@ -2,10 +2,16 @@
 title: Recommendations
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1604966966
+updated_at: 1605147654
 id: 3742689a-cbb7-458c-a9dd-62544dae89c6
 ---
-Google gives you lots of control over every aspect of your campaign. When you set up a campaign, many default settings are designed to give you as broad a reach as possible. We recommend that you adjust these settings and begin with smaller, tightly controlled campaigns and then expand from there. Unless you have an unlimited budget we believe you should do this with every new campaign, not just the very first campaign that you build. This recommendation holds even if you’ve run similar campaigns in the past. What worked before might not work the same way again, and you don’t want to spend your advertising budget figuring that out. A good strategy to follow is to begin a campaign on the Google search network only, without advertising on Google search partners or the display network. This gives you the most control over cost and lets you focus your effort and energy into optimizing performance in one area before expanding to another.
+Google gives you lots of control over every aspect of your campaign. When you set up a campaign, many default settings are designed to give you as broad a reach as possible. 
+
+We recommend that you adjust these settings and begin with smaller, tightly controlled campaigns and then expand from there. Unless you have an unlimited budget we believe you should do this with every new campaign, not just the very first campaign that you build. 
+
+This recommendation holds even if you’ve run similar campaigns in the past. What worked before might not work the same way again, and you don’t want to spend your advertising budget figuring that out. 
+
+A good strategy to follow is to begin a campaign on the Google search network only, without advertising on Google search partners or the display network. This gives you the most control over cost and lets you focus your effort and energy into optimizing performance in one area before expanding to another.
 
 ### Recommended initial campaigns settings
 
