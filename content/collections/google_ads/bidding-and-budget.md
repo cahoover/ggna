@@ -2,9 +2,8 @@
 title: 'Bidding and budget'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1605147532
+updated_at: 1605147545
 id: 956299d8-35c2-4667-adf4-b93781d0faa4
-published: false
 ---
 Whenever anyone searches on Google, AdWords performs a digital auction to decide which ads will appear in the results. Unlike typical auctions, bidding alone does not determine the winner; your Quality Score also plays an important role. Nonetheless, bidding does affect campaign results and costs, so choose your bid with care.
 
