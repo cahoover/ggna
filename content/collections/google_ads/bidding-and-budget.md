@@ -2,7 +2,7 @@
 title: 'Bidding and budget'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1604966657
+updated_at: 1605147532
 id: 956299d8-35c2-4667-adf4-b93781d0faa4
 published: false
 ---
@@ -21,7 +21,10 @@ Here are the basics you should understand:
 
 For each search, Google AdWords identifies all the ads with matching keywords. It multiplies each ad’s quality score by the maximum cost-per-click that the advertiser has set. The product is known as the “ad rank” score, and it determines if and where a search result will appear. To better understand how ad rank works, consider the following four advertisers: Ad Rank = Quality Score * Max CPC bid For example, consider four advertisers:
 
-**Advertiser 1**  Bid: $10,  Quality Score: 1, Ad Rank: Ad not displayed **Advertiser 2**  Bid: $4,  Quality Score: 2, Ad Rank score: 8 **Advertiser 3**  Bid: $2,  Quality Score: 6, Ad Rank score: 12 (first place) **Advertiser 4**  Bid: $1,  Quality Score: 9, Ad Rank score: 9
+**Advertiser 1**  Bid: $10,  Quality Score: 1, Ad Rank: Ad not displayed
+**Advertiser 2**  Bid: $4,  Quality Score: 2, Ad Rank score: 8 
+**Advertiser 3**  Bid: $2,  Quality Score: 6, Ad Rank score: 12 (first place) 
+**Advertiser 4**  Bid: $1,  Quality Score: 9, Ad Rank score: 9
 
 Notice that Advertiser 1 had such a low quality score that their ad was not displayed at all, even though they bid the most! Likewise, even though Advertiser 3 had the third-lowest bid, its ad reached first place thanks to a high quality score.
 
