@@ -2,7 +2,46 @@
 title: 'Introducing Google Ads'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1604967170
+updated_at: 1605146711
 id: 824ace9f-7974-47a6-9238-408653ca052b
 ---
-AdWords is a Google service that lets you place advertisements within search results. When you created an ad, you tell Google what searches should display the ad. Every time someone searches for something, Google collects all the ads that are associated with that search. It then decides where and in what order to display the ads by ranking them by quality and the amount the advertiser is willing to pay. Benefits of using AdWords The traditional method of advertising works by placing an ad in front of as many people as possible by running it on a successful television show or in a widely-read magazine.. This kind of advertising is still popular, but has some drawbacks. It can be very expensive to produce an ad, not to mention buy space for it. You can’t rapidly iterate your advertising copy to improve it over time. You can’t be sure you are reaching people that are interested in your product, and you can’t precisely target your message, and you can’t easily measure the effectiveness of the ad. Search advertising makes all those things much easier. You can set up an account in a few minutes, and start running ads on a ten-dollar budget. Your ad is seen exclusively by people interested in your product or service. You only pay when someone clicks on your ad. And you can easily and continuously test different approaches. You can narrow your advertising to specific locations, specific devices, or both. Search also lets you connect with a large audience efficiently. About 80% of internet users navigate the web using Google. Its reach is vast. AdWords can be a very effective way to connect with customers. However, it’s also deceptively complex. If you don’t pay attention, it can also be a very efficient and effective way to blow your marketing budget without much to show for it. Challenges of using AdWords Many people are attracted to AdWords because of the promise of engaging interested searches, but then quickly become frustrated. They might complain that they tried AdWords but struggled to get it to work for them. It was hard to get ads placed, clicks were expensive, and all of the variables and options were confusing. Frustration among AdWords beginners is common. Take a deep breath, relax, and treat AdWords like any new skill you might learn. It’ll take some time before you get comfortable with it and start to see real benefits. **How ads appear in search results** When you set up an AdWords campaign, you tell Google when and where to show the ad. If you like, you can run ads only during certain times of day. You can show ads only to searchers physically located in one small area. Or you can run ads all day long worldwide. More importantly, you also must tell Google what searches should trigger the ad. This is done by selecting keywords and associating them with an ad. When someone types in a search that is a match or a close variation of a keyword, the ad is eligible to be displayed. Ads appear at the top and bottom of Google search results. For example, consider the results page for healthcare.
+AdWords is the Google program that people use to display ads within search results.
+
+It a powerful platform because ads are shown only if people search for something related to your product. You tell Google which search queries should trigger your ad. This ability to target people combined with the reach of Google makes AdWords the best way to connect directly with potential customers.
+
+Briefly, here’s how it works: when people do a search that triggers your ad, the ad competes against other advertiser’s ads for placement in the results page. Ads placed higher on the first results page get the best results. Google determines which ads to display based on two criteria: the relevance of the ad to the search, and how much you are willing to pay.
+
+dWords Advantages
+
+The traditional method of advertising works by placing an ad in front of as many people as possible by running it on a successful television show or in a widely-read magazine.
+	•	https://blog.adfury.io/wp-content/uploads/download.jpg" alt="" width="195" height="259" />
+
+This kind of advertising is great, but has some drawbacks.
+	
+	Ad space in traditional media can be expensive,
+	
+	The cost is the same regardless of results,
+	
+	There’s no precise way to measure effectiveness,
+	
+	There’s no easy way to test different messages,
+	
+	Ad can’t be modified after publication, even if it performs poorly or contains a typo.
+	
+Search advertising makes all those things much easier. You can set up an account in a few minutes, and start running ads on a ten-dollar budget. Your ad is seen exclusively by people interested in your product or service. You only pay when someone clicks on your ad. You can continuously test different approaches. You can narrow your advertising to specific locations, specific devices, or both.
+
+Search also lets you connect with a large audience efficiently. About 80% of internet users navigate the web using Google. Its reach is vast. AdWords can be a very effective way to connect with customers.
+
+AdWords is great. But it can also be tricky. If you don’t pay attention, you can burn through a marketing budget pretty quickly without a lot to show for it.
+
+Challenges of using AdWords
+Many people are attracted to AdWords because of the promise of engaging interested searches. Some find it frustrating and struggle to get it to work for them. It was hard to get ads placed, clicks were expensive, and all of the variables and options were confusing.
+
+Frustration among AdWords beginners is common. Take a deep breath, relax, and treat AdWords like any new skill you might learn. It’ll take some time before you get comfortable with it and start to see real benefits.
+
+What about SEO?
+Search engine optimization, or SEO, involves techniques designed to help your website to appear at the top of regular unpaid (“organic”) search results. As with AdWords, successful SEO requires the strategic use of keywords, building engaging website content, and quality site designs.
+
+You should invest in making sure your business has as strong SEO as possible. Keep in mind that success takes time and effort. Over the short term, larger and better-established companies can rank higher no matter what you do.
+
+Advertising is a good option to overcome that, especially to attract customers looking to buy. Studies have shown that searchers intending to make a purchase (those with so-called “high commercial intent”) are likely to engage with an ad because it’s a more direct way to accomplish that goal.
