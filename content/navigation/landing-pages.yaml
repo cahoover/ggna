@@ -1,0 +1,10 @@
+title: Landing Pages
+collections:
+  - landing_pages
+tree:
+  -
+    title: 'Set up a server'
+    children:
+      -
+        title: Diddley
+        url: /diddley
