@@ -4,3 +4,6 @@ collections:
 tree:
   -
     title: Introduction
+    children:
+      -
+        entry: af2cec5b-0c01-4f80-9b32-930b17ac301c
