@@ -2,11 +2,11 @@
 title: 'Hi, I''m Chris'
 intro: |
   I'm a long time marketer, mostly for technical B2B products. I also co-founded Adfury, a SaaS platform for optimizing search advertising. This site is mostly a collection of how-tos for digital marketing.
-  ![chris hoover](/home/chrish.png)
+  ![chris hoover](../home/chrish.png)
   If you enjoy the technical aspects of marketing, this might be helpful. If you don't, [get in touch](mailto:chris@generalgrowthanalytics.com) and I'll do it for you.
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608419660
+updated_at: 1608419728
 id: b785a320-1b83-48eb-b8bc-c5770f3caecb
 ---
 When I first started consulting, I figured the work would be similar to my experience in-house. I thought I would help with marketing strategy, just with more variety. 
