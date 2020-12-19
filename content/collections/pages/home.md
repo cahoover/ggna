@@ -1,9 +1,9 @@
 ---
-title: Welcome
-intro: 'Overwhelmed by the'
+title: 'Hi, I''m Chris'
+intro: 'I''m a long time marketer, mostly for technical B2B products. I also co-founded Adfury, a SaaS platform for optimizing search advertising. This site is mostly a collection of how-tos for digital marketing.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608344815
+updated_at: 1608418523
 id: b785a320-1b83-48eb-b8bc-c5770f3caecb
 ---
 When I first started consulting as a "virtual CMO," I figured the work would be similar to my experience as salaried executive. I imagined that I would help companies define and implement growth strategy, with the added benefit of greater variety and more flexibility. 
