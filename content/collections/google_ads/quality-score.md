@@ -2,7 +2,9 @@
 title: 'Quality score'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1605146876
+updated_at: 1608422476
+categories:
+  - google-ads-101
 id: ad29ad22-fb50-41f0-bb7e-e23dcb1ba8a3
 ---
 A bit of background. For Google, high quality search results is everything. Their business depends on delivering search results that are relevant to the search and link to the best information. This is just as true for advertisements as it is for anything else that appears on a search results page. 
