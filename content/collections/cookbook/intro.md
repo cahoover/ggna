@@ -1,20 +1,42 @@
 ---
 title: 'Create a new subdomain'
-intro: 'Test introduction'
+intro: 'You can host multiple sites on a single server. This makes things much easier if you are, say, managing landing pages for a bunch of different clients.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608432971
+updated_at: 1608436749
 id: 21997066-fb9c-47f9-a5ba-d694cf8d9da1
 ---
-Create the web folder to contain the content and wp
+## A high level view of how this works
+(Ignoring DNS for now, and using the friendlier term "folder" in lieu of directory.)
 
-create a folder in var/www
+When someone types a URL into browser, the browser makes a connection to the web server that hosts the URL. 
+
+In the server is a folder called /sites-enabled. This folder has a bunch of text files. Each one of those files is a configuration information for a web site, including the folder on the server that contains the site. 
+
+* The server gets an incoming request for a web site
+* The server looks at the configuration file to see which folder contains the site
+* The server sends back the contents of the folder
+
+It's a tiny bit more complicated than that, but that's the gist.  Here's how to set this up.
+
+## Create the web folder to contain the site
+
+If you remember the sequence of events described a dozen or so words ago, you'll know that this is the folder that will contain our site. 
+
+It's standard practice to maintain web sites in the /var/www/ folder. So first go there.
 
 ```bash
-mkdir [directory]
+cd /var/www
 ```
 
-Create a database
+Now we'll make the folder that will contain the site. It doesn't technically matter what you name it, but to keep track of things it's a good idea to reference the site.  Let's say our site will be www.disco-fever.com, so we'll name the folder disco.
+
+
+```bash
+mkdir disco
+```
+
+## Create a database (if necessary
 
 First enter into the mysql prompt
 
