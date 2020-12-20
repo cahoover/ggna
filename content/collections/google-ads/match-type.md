@@ -2,8 +2,9 @@
 title: 'Match type'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1605146956
+updated_at: 1608429344
 id: 0ff1f9de-b6cb-475e-928c-084edfcd5fcb
+published: false
 ---
 When choosing keywords, you have some control over how broadly or narrowly they need to match a search query before the ad is triggered. You do this by establishing match types for each keyword. For example, you can choose a broad match for your keyword. With a broad match, the widest variety of keywords will trigger your ad. A broad match keyword “car insurance” might be trigger an ad for a search query “auto coverage.” At the other end of the spectrum is the exact match. With an exact match, the search term must match your keyword exactly, with no misspellings or extra words. For example, if “insurance” were an exact match type, the search query “car insurance” would not trigger your ad. Different match types have different implications for a campaign. Broad match keywords allow for the maximum traffic, because your ad will match the most search queries. On the other hand, more of those queries will be irrelevant to your business, so you might have fewer conversions. An exact match keyword will have much less traffic, but with a greater likelihood that the traffic will be relevant to your business.
 
