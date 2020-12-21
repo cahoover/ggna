@@ -3,7 +3,7 @@ title: 'Maintain multiple sites on a server'
 intro: 'You can host multiple sites on a single server. This makes things much easier if you are, say, managing landing pages for a bunch of different clients.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608582125
+updated_at: 1608583118
 id: 21997066-fb9c-47f9-a5ba-d694cf8d9da1
 ---
 ## A high level view of how this works
@@ -24,6 +24,8 @@ It's a tiny bit more complicated than that, but that's the gist.  Here's how to 
 If you remember the sequence of events described a dozen or so words ago, you'll know that this is the folder that will contain our site. 
 
 It's standard practice to maintain web sites in the /var/www/ folder. So first go there.
+
+>The Filesystem Hierarchy Standard defines this and offers you the following: /var – a place to put data that changes during normal operation, like logs, etc. /var/www is the default directory to place web content for Apache, but its usage is not standardized at all and just the "usual" place you'd put it because people don't change the default settings very often.
 
 ```bash
 cd /var/www
