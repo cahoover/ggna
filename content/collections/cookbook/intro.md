@@ -3,7 +3,7 @@ title: 'Maintain multiple sites on a server'
 intro: 'If you''re an agency or a consultant, you might want to manage landing pages for multiple clients. Here''s how you set this up on a Linux, Nginx, MySQL, PHP (LEMP) stack using Ubuntu 18.4.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608682394
+updated_at: 1608682776
 id: 21997066-fb9c-47f9-a5ba-d694cf8d9da1
 ---
 ## A high level view of how this works
@@ -36,7 +36,7 @@ mkdir disco
 ```
 ## Create a database 
 
-(If necessary. You'll need to do this if you are using WordPress). 
+(If necessary. Do this if you are using WordPress). 
 
 First enter into the mysql prompt. You'll need to have the right permissions to do this. Here we assume you mange this server and know the database root password
 
@@ -76,10 +76,11 @@ EXIT;
 
 ## Update sites available
 
-Nginx uses configuration files in a folder called _sites-enabled_ to understand where sites are located. To provide a flexibility to easily turn sites on and off, we first create the configuration file in a folder called _sites-available_ and then create a symbolic link in _sites-enabled_ to point to it.
+Nginx looks in a folder called _sites-enabled_ for site configuration files. To provide additional control, we create the configuration file in a folder called _sites-available_ and then create a symbolic link in _sites-enabled_ that points to it.
 
 >A symbolic link (or symlink) is a pointer to another file. It's like a mirror. In this way you can prepare many sites in _sites-available_ and create symbolic links to only a few of them in _sites-enabled_.    
 
+Change into the folder
 
 ```
 cd /etc/nginx/sites-available
