@@ -3,7 +3,7 @@ title: 'Maintain multiple sites on a server'
 intro: 'If you''re an agency or a consultant, you might want to manage landing pages for multiple clients. Here''s how you set this up on a Linux, Nginx, MySQL, PHP (LEMP) stack using Ubuntu 18.4.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608761018
+updated_at: 1608761678
 id: 21997066-fb9c-47f9-a5ba-d694cf8d9da1
 ---
 ## A high level view of how this works
@@ -305,7 +305,7 @@ Now we copy the WordPress files over to it's final location.
 sudo cp -a /tmp/wordpress/. /var/www/[directory]
 ```
 
-## Complete WordPress configuration
+## Get and install WordPress Salt credentials in the wp-config file
 
 The first thing we'll do is create *salt* values for WordPress. Salt is a security tool that helps keep your WordPress passwords safe.
 
@@ -325,40 +325,64 @@ You'll get back something like this:
 
 What we'll do is copy these and paste them into the configuration file. Highlight them with your mouse, right click, and select "copy."
 
-Now open the editor with the wp-config.php file. You'll see a section called "Authentication Unique Keys and Salts." It looks like this:
-
-![wordpress salt](/img/cookbook/wp_salt2.png)
+Now open the editor with the wp-config.php file.
 
 ```
 nano /var/www/html/wp-config.php
 ```
 
-Add the database information to the wp-config file
+You'll see a section called "Authentication Unique Keys and Salts." It looks like this:
 
-add this line just beneath
+![wordpress salt placeholder](/img/cookbook/wp_salt2.png)
+
+Remove those placeholder entries and paste in the entries you received in the step above.
+
+
+## Add database information to the wp-config file
+
+Remember the database you created earlier? Here we tell WordPress about it. Above the salt credentials is an area in the config file that contains database information. It looks like this:
+
+![wordpress database](/img/cookbook/wp_db.png)
+
+Replace database_name_here with the database name you selected. Remember to keep the single quotes (') around the name.
+
+* Replace 'username_here' with the user name you selected.
+
+* Replace 'password_here' with the password you selected.
+
+Leave the other entries as is. 
+
+Add this line to the end of the database section, just above the beginning of the Salt section
 
 ```
 define('FS_METHOD', 'direct');
 ```
 
-update permissions in the folder
+Now press cntl-X to save and close your wp-config file.
 
-```
-sudo chown -R chris:www-data /var/www/[directory]
+
+## Update permissions in the folder
+
+You want to ensure that nginx has read and write permissions to the directory. nginx by default acts as the user "www-data," so we'll give that user ownership permissions with the site folder.
+
+```bash
+sudo chown -R www-data:www-data /var/www/[directory]
 ```
 
-make sure that additional files will maintain server ownership
+Next, we'll make sure that additional files will maintain server ownership
 
-```
+```bash
 sudo find /var/www/[directory] -type d -exec chmod g+s {} \;
 ```
-make sure that wp can write to various folders
 
-Chris
-```
+Finally we make sure that Wordpress can write to various folders
+
+```bash
 sudo chmod -R g+w /var/www/[directory]/wp-content
 sudo chmod -R g+w /var/www/[directory]/wp-content/themes
 sudo chmod -R g+w /var/www/[directory]/wp-content/plugins
 ```
 
-Now go to the site and finish configuration through the web interface.
+## Complete installation through the browser
+
+That's it! You should have a working WordPress instance. Open a browser, go to the site, and finish configuration through the web interface.
