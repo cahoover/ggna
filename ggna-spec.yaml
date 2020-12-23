@@ -1,0 +1,23 @@
+name: ggna
+region: nyc
+static_sites:
+- build_command: php please ssg:generate
+  environment_slug: php
+  output_dir: storage/app/static
+  envs:
+  - key: APP_KEY
+    scope: BUILD_TIME
+    value: base64:HkS2jZscfuK/1dNF0QB8qBIGFQrr6hEYWMGzAqDfmOs=
+  - key: APP_URL
+    scope: BUILD_TIME
+    value: https://ggna-xzlxm.ondigitalocean.app/
+  - key: PHP_VERSION
+    scope: BUILD_TIME
+    value: "7.4"
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: cahoover/ggna
+  name: ggna
+  routes:
+  - path: /

@@ -49,7 +49,7 @@
 
         &:before {
             content: '';
-            background: url('/img/hot-tip.svg') no-repeat;
+            background: url('/img/thrill-detail.svg') no-repeat;
             height: 35px;
             width: 70px;
             position: absolute;

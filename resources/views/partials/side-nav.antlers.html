@@ -11,13 +11,15 @@
         {{ /pages }}
     </div>
 
-    {{ if segment_1 === 'cookbook' }}
-        {{ partial:side-nav-main for="cookbook" }}
-    {{ elseif segment_1 === 'google-ads' }}
-        {{ partial:side-nav-main for="google-ads" }}
-    {{ elseif segment_1 === 'blog' }}
+    {{ if segment_1 == 'blog' }}
         {{ partial:side-nav-blog }}
-    {{ else }}
-        {{ partial:side-nav-main for="analytics" }}
+    {{ elseif segment_1 === 'google-ads' }}
+        {{ partial:side-nav-google }}
+    {{ elseif segment_1 === 'cookbook' }}
+        {{ partial:side-nav-cookbook }}
+    {{ elseif segment_1 === 'landing-pages' }}
+        {{ partial:side-nav-landing }}
+    {{ elseif segment_1 === 'data-science' }}
+        {{ partial:side-nav-stats }}
     {{ /if }}
 </nav>

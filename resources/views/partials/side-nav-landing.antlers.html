@@ -1,0 +1,10 @@
+{{ nav:collection:landing-pages }}
+<ul>
+  <h5>{{ title }}</h5>
+  {{ children scope="child"}}
+    <li class="{{ is_current || is_parent ?= 'active' }}">
+            <a href="{{ url }}">{{ nav_title ?? title }}{{ if child:mount }}&hellip;{{ /if }}</a>
+    </li>
+    {{ /children }}
+</ul>
+{{ /nav:collection:landing-pages }}
