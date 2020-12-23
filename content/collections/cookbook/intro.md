@@ -3,7 +3,7 @@ title: 'Maintain multiple sites on a server'
 intro: 'If you''re an agency or a consultant, you might want to manage landing pages for multiple clients. Here''s how you set this up on a Linux, Nginx, MySQL, PHP (LEMP) stack using Ubuntu 18.4.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608683505
+updated_at: 1608685918
 id: 21997066-fb9c-47f9-a5ba-d694cf8d9da1
 ---
 ## A high level view of how this works
@@ -60,6 +60,8 @@ Paste the following little snippet in there:
 
 and then press ```cntl-x``` to save the file and exit the editor 
 
+>From now on I won't use "disco" in my examples. I'll use the placeholder \[servername\] instead, and you replace that with whatever you like. It turns out people were confused and thought you *had* to use "disco."
+
 ## Create a database 
 
 (If necessary. Do this if you are using WordPress). 
@@ -76,8 +78,9 @@ You'll get a prompt for a password:
 Enter password:
 ```
 
-Once you're in MySql, we'll create a database. In the command below - replace \[servername\] with the name of the database. Once again, it doesn't technically matter what you call it, but it makes things easier to keep consistent naming. 
-```
+Once you're in MySql, we'll create a database. In the command below - replace \[servername\] with the name of the database. Once again, it doesn't technically matter what you call it, but it makes things easier to keep consistent naming.
+
+```bash
 CREATE DATABASE [servername] DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 ```
 
@@ -85,62 +88,59 @@ Then create the user. Late on we'll configure WordPress to use this username whe
 
 Don't forget to add the single quotes around the username, localhost, and the password. 
 
-```
+```bash
 GRANT ALL ON [servername].* TO ‘[servername_user]'@'localhost' IDENTIFIED BY ’[password]';
 ```
 
 Running the "flush privileges" command reloads the permissions table without having to restart the server. You need to use it to activate the new user you just created.
 
-```
+```bash
 FLUSH PRIVILEGES;
 ```
 Exit out of MySQL, you're done with the database.
 
-```
+```bash
 EXIT;
 ```
 
-## Update sites available
+## Update sites-available
 
-Nginx looks in a folder called _sites-enabled_ for site configuration files. To provide additional control, we create the configuration file in a folder called _sites-available_ and then create a symbolic link in _sites-enabled_ that points to it.
+Nginx looks in a folder called _/etc/nginx/sites-enabled_ for site configuration files. To provide additional control, we create the configuration file in a folder called _/etc/nginx/sites-available_ and then create a symbolic link in _sites-enabled_ that points to it.
 
 >A symbolic link (or symlink) is a pointer to another file. It's like a mirror. In this way you can prepare many sites in _sites-available_ and create symbolic links to only a few of them in _sites-enabled_.    
 
-Change into the folder
+Move into the folder
 
-```
+>Some people might point out that you don't have to move into the folder every time. But it's a habit, and it orients me in the OS. Also, it keeps you from having to type the entire path every time, which is a hassle. 
+
+```bash
 cd /etc/nginx/sites-available
 ```
 
-clone one of the sb ones - replace [servername] with the server’s name
+In this folder should be a file called default. You can copy this and use it as a template, but there's lots of comments and it gets a bit cluttered. Instead I suggest you create an empty file, and if you want to use the default for reference you can find it (here)[https://gist.github.com/cahoover/8be8b18faef9cf5436df833684b45a1e]. We'll use the 'sudo' command, which lets you act as a superuser.
 
-```
-sudo cp sb1 [servername]
-```
+Yet again, I suggest you stay consistent with your naming. Name this file the same as you named the folder in /var/www. 
 
-Then enter the file you just created
 
-```
+```bash
 sudo nano [servername]
 ```
 
-Remove all the cert stuff with ‘ctrl-k’ and update to this:
+You'll see text with a lot of comments. something like this. 
 
 ```
 server {
-    . . .
-    location / {
-#try_files $uri $uri/ =404;
-try_files $uri $uri/ /index.php$is_args$args;
-}
+        listen 80 default_server;
+        listen [::]:80 default_server;
 
-    location = /favicon.ico { log_not_found off; access_log off; }
-    location = /robots.txt { log_not_found off; access_log off; allow all; }
-    location ~* \.(css|gif|ico|jpeg|jpg|js|png)$ {
-        expires max;
-        log_not_found off;
-    }
-    . . .
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
 }
 ```
 
