@@ -2,3 +2,7 @@ name: 'Christopher Hoover'
 super: true
 id: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
 password_hash: $2y$10$gxWnSk0FrUbS/UszEuwMaeNZJsZSFDfIVVGAV7qiVnj44JjV8P5Eq
+preferences:
+  assets:
+    main:
+      mode: grid
