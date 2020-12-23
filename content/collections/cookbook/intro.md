@@ -3,7 +3,7 @@ title: 'Maintain multiple sites on a server'
 intro: 'If you''re an agency or a consultant, you might want to manage landing pages for multiple clients. Here''s how you set this up on a Linux, Nginx, MySQL, PHP (LEMP) stack using Ubuntu 18.4.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608685918
+updated_at: 1608689362
 id: 21997066-fb9c-47f9-a5ba-d694cf8d9da1
 ---
 ## A high level view of how this works
@@ -117,47 +117,144 @@ Move into the folder
 cd /etc/nginx/sites-available
 ```
 
-In this folder should be a file called default. You can copy this and use it as a template, but there's lots of comments and it gets a bit cluttered. Instead I suggest you create an empty file, and if you want to use the default for reference you can find it (here)[https://gist.github.com/cahoover/8be8b18faef9cf5436df833684b45a1e]. We'll use the 'sudo' command, which lets you act as a superuser.
+In this folder should be a file called default. You can copy this and use it as a template, but there's lots of comments and it gets a bit cluttered. Instead I suggest you create an empty file, and if you want to use the default for reference you can find it (here)[https://gist.github.com/cahoover/8be8b18faef9cf5436df833684b45a1e]. 
 
-Yet again, I suggest you stay consistent with your naming. Name this file the same as you named the folder in /var/www. 
-
+We'll use the 'sudo' command, which lets you act as a superuser. Yet again, I suggest you stay consistent with your naming. Name this file the same as you named the folder in /var/www. 
 
 ```bash
 sudo nano [servername]
 ```
 
-You'll see text with a lot of comments. something like this. 
+Enter the following in the editor. You don't have to keep the comments, but you might want to for later reference. 
 
 ```
 server {
+
+        ######
+        # This line tells nginx the name of the URL that references this site
+        # Note I'm entering URL versions both with and without a "www"
+        # If you are created a subdomain for a client, just enter it alone
+        # For example:
+        # server_name info.[client-site].com
+                
+        server_name disco-fever.com www.disco-fever.com;
+        
+        # Obviously, swap "disco-fever" with the real name of your site.
+
+	    #####
+        # This line tells nginx which folder contains the site (the root folder)
+        # For example, if you created a folder called /var/www/disco,
+        # this file would say root /var/www/disco;
+        
+        root /var/www/[servername];
+        
+        ######
+        # This line tells nginx which file to initiate by default. Installing Wordpress will 
+        # remove the index and index.html files, leaving only index.php.   
+        
+        index index.html index.php;
+         
+        ######
+        # This line tells nginx which port to listen for requests for this site.
+        # 80 is the default (unsecured) HTTP port, so we'll us it. 
+        # Note that this will be changed later when we add security, but 
+        # don't sweat it for now.
+        
         listen 80 default_server;
         listen [::]:80 default_server;
 
-        root /var/www/html;
-        index index.html index.htm index.nginx-debian.html;
-
-        server_name _;
+        ######
+        # The location setting lets you configure how NGINX will respond to requests
+        # for resources within the server. Just like the server_name directive tells NGINX
+        # how to process requests for the domain, location directives cover requests for
+        # specific files and folders, such as http://example.com/blog/.
 
         location / {
-                try_files $uri $uri/ =404;
+                try_files $uri $uri/ /index.php$is_args$args;
         }
+        
+        ######
+        # We'll add some more location files, one for the favicon, one for the robots.txt, 
+        # and none for images, js, and css. The log_not_found and access_log directives
+        # mean that the logs won't be overwhelmed by 404 errors if the favicon isn't there.
+        
+        location = /favicon.ico { log_not_found off; access_log off; }
+        location = /robots.txt { log_not_found off; access_log off; allow all; }
+        location ~* \.(css|gif|ico|jpeg|jpg|js|png)$ {
+             expires max;
+             log_not_found off;
+            }
+        
+        #####
+        # Finally we'll tell nginx where the PHP files are, which is necessary to 
+        # Process WordPress (a PHP framework). This file assumes you are using php7.3
+        # which might not be the case. By default, php listens on run/php/[version]-fpm.sock
+        # by default. For example, php7.4 listens on run/php/php7.4-fpm.sock, and 
+        # php 8 listens on run/php/php8.0-fpm.sock
+        # 
+        # Note: You might see references to /var/run. The directory /run is usually 
+        # preferred, with /var/run generally symlinked to /run 
+        
+        location ~ \.php$ {
+        # Choose either a socket or TCP/IP address
+        fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+        # fastcgi_pass 127.0.0.1:9000;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+    }
+    ## End - PHP      
 }
 ```
 
-Create the symlink
+Now we save the file by pressing ```cntl-x``` and selecting "yes". You'll be back at the command prompt.
 
-```
-sudo ln -s /etc/nginx/sites-available/[directory] /etc/nginx/sites-enabled/
+## Create the symlink
+
+Next, create the symlink between sites-enabled and sites-available. This "enables" the site.
+
+```bash
+sudo ln -s /etc/nginx/sites-available/[file-name] /etc/nginx/sites-enabled/
 ```
 
-Restart the server
+## Restart the server
 
-```
+This will load your new configuration into nginx. 
+
+First, test that your configuration files don't have any typos.
+
+```base
 sudo nginx -t
+```
+
+If you get an error, go back and open your configuration file in nano again and fix the issues. Then try again. You won't have to do the sym-link process again.
+
+Once you get an okay, reload nginx
+
+```bash
 sudo systemctl reload nginx
 ```
 
-Update the cert
+## Create a SSL cert
+
+Modern sites are encrypted using a special process that uses a security certificate and an exchange of keys.
+
+>At a very high level, the processes requires a private key (which only you have) and a public key (which anyone can get). Only you can encrypt data using the private key, and your public key is the only key that can un-encrypt it. Using this process assures users that the web site is actually coming from you, and not from someone pretending to be you.
+
+We'll use a free service called certbot to create a security cert. The process will also update the sites-enabled file to reflect the cert. If you don't have certbot installed, that's what needs to happen first.
+
+Add the repository
+
+```bash
+sudo add-apt-repository ppa:certbot/certbot
+```
+
+Then install Certbot’s Nginx package:
+
+```bash
+sudo apt install python-certbot-nginx
+```
 
 
 ```
