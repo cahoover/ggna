@@ -3,7 +3,7 @@ title: 'Maintain multiple sites on a server'
 intro: 'If you''re an agency or a consultant, you might want to manage landing pages for multiple clients. Here''s how you set this up on a Linux, Nginx, MySQL, PHP (LEMP) stack using Ubuntu 18.4.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608760626
+updated_at: 1608761018
 id: 21997066-fb9c-47f9-a5ba-d694cf8d9da1
 ---
 ## A high level view of how this works
@@ -321,11 +321,13 @@ curl -s https://api.wordpress.org/secret-key/1.1/salt/
 
 You'll get back something like this:
 
-![wordpress salt](/assets/cookbook/wp_salt.png)
+![wordpress salt](/img/cookbook/wp_salt.png)
 
+What we'll do is copy these and paste them into the configuration file. Highlight them with your mouse, right click, and select "copy."
 
+Now open the editor with the wp-config.php file. You'll see a section called "Authentication Unique Keys and Salts." It looks like this:
 
-Then copy  the values and open the configuration file
+![wordpress salt](/img/cookbook/wp_salt2.png)
 
 ```
 nano /var/www/html/wp-config.php
