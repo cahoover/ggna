@@ -6,7 +6,7 @@ intro: |
   If you enjoy the technical aspects of marketing, this might be helpful. If you don't, [get in touch](mailto:chris@generalgrowthanalytics.com) and I might be able to do it for you.
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608753833
+updated_at: 1608758561
 id: b785a320-1b83-48eb-b8bc-c5770f3caecb
 ---
 When I first started consulting, I figured the work would be similar to my experience in-house: I would help with marketing strategy, just with more variety. 
