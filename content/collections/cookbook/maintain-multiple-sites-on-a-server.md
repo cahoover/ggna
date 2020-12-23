@@ -3,7 +3,7 @@ title: 'Maintain multiple sites on a server'
 intro: 'If you''re an agency or a consultant, you might want to manage landing pages for multiple clients. Here''s how you set this up on a Linux, Nginx, MySQL, PHP (LEMP) stack using Ubuntu 18.4.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608760281
+updated_at: 1608760626
 id: 21997066-fb9c-47f9-a5ba-d694cf8d9da1
 ---
 ## A high level view of how this works
@@ -127,7 +127,7 @@ sudo nano [servername]
 
 Enter the following in the editor. You don't have to keep the comments, but you might want to for later reference. 
 
-```
+```config
 server {
 
         ######
@@ -305,7 +305,7 @@ Now we copy the WordPress files over to it's final location.
 sudo cp -a /tmp/wordpress/. /var/www/[directory]
 ```
 
-## Final WordPress configuration
+## Complete WordPress configuration
 
 The first thing we'll do is create *salt* values for WordPress. Salt is a security tool that helps keep your WordPress passwords safe.
 
@@ -313,7 +313,7 @@ The first thing we'll do is create *salt* values for WordPress. Salt is a securi
 
 Because of their importance, you should *never* share your WordPress salts and security keys with anyone.
 
-First, get the salts
+First, get the salts:
 
 ```
 curl -s https://api.wordpress.org/secret-key/1.1/salt/
@@ -321,6 +321,7 @@ curl -s https://api.wordpress.org/secret-key/1.1/salt/
 
 You'll get back something like this:
 
+![wordpress salt](/assets/cookbook/wp_salt.png)
 
 
 
