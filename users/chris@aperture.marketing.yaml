@@ -5,4 +5,4 @@ password_hash: $2y$10$gxWnSk0FrUbS/UszEuwMaeNZJsZSFDfIVVGAV7qiVnj44JjV8P5Eq
 preferences:
   assets:
     main:
-      mode: grid
+      mode: table
