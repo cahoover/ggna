@@ -3,7 +3,7 @@ title: 'Maintain multiple sites on a server'
 intro: 'If you''re an agency or a consultant, you might want to manage landing pages for multiple clients. Here''s how you set this up on a Linux, Nginx, MySQL, PHP (LEMP) stack using Ubuntu 18.4.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608682776
+updated_at: 1608683505
 id: 21997066-fb9c-47f9-a5ba-d694cf8d9da1
 ---
 ## A high level view of how this works
@@ -34,6 +34,32 @@ Now we'll create the folder that will contain the site. It doesn't technically m
 ```bash
 mkdir disco
 ```
+Now let's put some placeholder HTML into the folder so that we can test everything later on. First go into the folder
+
+```bash
+cd disco
+```
+And open the nano text editor
+
+```bash
+nano index.html
+```
+
+Paste the following little snippet in there: 
+
+```html
+<html>
+    <head>
+        <title>Welcome to Disco-Fever!</title>
+    </head>
+    <body>
+        <h1>Success!  The disco-fever.com server block is working!</h1>
+    </body>
+</html>
+```
+
+and then press ```cntl-x``` to save the file and exit the editor 
+
 ## Create a database 
 
 (If necessary. Do this if you are using WordPress). 
