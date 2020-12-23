@@ -3,7 +3,7 @@ title: 'Maintain multiple sites on a server'
 intro: 'If you''re an agency or a consultant, you might want to manage landing pages for multiple clients. Here''s how you set this up on a Linux, Nginx, MySQL, PHP (LEMP) stack using Ubuntu 18.4.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608689362
+updated_at: 1608760000
 id: 21997066-fb9c-47f9-a5ba-d694cf8d9da1
 ---
 ## A high level view of how this works
@@ -134,8 +134,8 @@ server {
         # This line tells nginx the name of the URL that references this site
         # Note I'm entering URL versions both with and without a "www"
         # If you are created a subdomain for a client, just enter it alone
-        # For example:
-        # server_name info.[client-site].com
+        # For example, the subdomain would be:
+        # server_name info.example.com
                 
         server_name disco-fever.com www.disco-fever.com;
         
@@ -168,13 +168,14 @@ server {
         # for resources within the server. Just like the server_name directive tells NGINX
         # how to process requests for the domain, location directives cover requests for
         # specific files and folders, such as http://example.com/blog/.
+        # In this case we'll support php files with args amended.
 
         location / {
                 try_files $uri $uri/ /index.php$is_args$args;
         }
         
         ######
-        # We'll add some more location files, one for the favicon, one for the robots.txt, 
+        # Here we add some more location files, one for the favicon, one for the robots.txt, 
         # and none for images, js, and css. The log_not_found and access_log directives
         # mean that the logs won't be overwhelmed by 404 errors if the favicon isn't there.
         
@@ -186,11 +187,11 @@ server {
             }
         
         #####
-        # Finally we'll tell nginx where the PHP files are, which is necessary to 
-        # Process WordPress (a PHP framework). This file assumes you are using php7.3
+        # Finally we'll tell nginx where the PHP files are, which is necessary for 
+        # WordPress. This file assumes you are using php7.3
         # which might not be the case. By default, php listens on run/php/[version]-fpm.sock
         # by default. For example, php7.4 listens on run/php/php7.4-fpm.sock, and 
-        # php 8 listens on run/php/php8.0-fpm.sock
+        # php 8 listens on run/php/php8.0-fpm.sock. Enter your version as appropriate.
         # 
         # Note: You might see references to /var/run. The directory /run is usually 
         # preferred, with /var/run generally symlinked to /run 
@@ -224,7 +225,7 @@ This will load your new configuration into nginx.
 
 First, test that your configuration files don't have any typos.
 
-```base
+```bash
 sudo nginx -t
 ```
 
@@ -235,6 +236,8 @@ Once you get an okay, reload nginx
 ```bash
 sudo systemctl reload nginx
 ```
+
+Now you have a working (but not yet secure) site! Test it by pointing your browser to the domain and you should see a secure site serving the Welcome HTML you build earlier.
 
 ## Create a SSL cert
 
@@ -255,41 +258,73 @@ Then install Certbot’s Nginx package:
 ```bash
 sudo apt install python-certbot-nginx
 ```
-
+Now create the cert. The command below creates the cert for both example.com and www.example.com. If you are creating a subdomain for a client's landing page, just enter that (e.g. info.example.com).
 
 ```
 sudo certbot --nginx -d example.com -d www.example.com
 ```
 
+Now you have a working and secure site! Test it by pointing your browser to the domain and you should see a secure site serving the Welcome HTML you build earlier.
 
-Get wordpress
+## Install WordPress
 
-```
+We'll get WordPress by getting the latest version in a temporary folder, and then copying it over to it's permanent location.
+
+First enter the temporary folder
+
+```bash
 cd /tmp
+```
+Then download WordPress
+
+```bash
 curl -O https://wordpress.org/latest.tar.gz
+```
+
+WordPress will be compressed, so we'll decompress it using the tar command. This will create a "wordpress" directory and 
+
+```bash
 tar xzvf latest.tar.gz
+```
+
+WordPress settings are contained in the wp-config file. There is a sample of this file which is fine for most deployments. Go ahead and make a copy for your configuration file
+
+```bash
 cp /tmp/wordpress/wp-config-sample.php /tmp/wordpress/wp-config.php
+```
+
+We'll create a folder to enable WordPress upgrades.
+
+```bash
 mkdir /tmp/wordpress/wp-content/upgrade
 ```
 
+Now we copy the WordPress files over to it's final location.
 
-If you've already done all that, just copy
-
-
-```
+```bash
 sudo cp -a /tmp/wordpress/. /var/www/[directory]
 ```
 
+## Final WordPress configuration
 
-Get salt values for wp
+The first thing we'll do is create *salt* values for WordPress. Salt is a security tool that helps keep your WordPress passwords safe.
 
+> Here's the idea: once you log in to WordPress, you can to stay logged in so that you don’t need to enter your username and password every single time. To do this, WordPress saves your login information in cookies. That’s great for users, but it's also a security issue if someone were able to hijack your browser’s cookies. To avoid this, WordPress uses salts and security keys to secure your login information so that malicious subjects can’t do anything with it. Think of them kind of like “extra” passwords for your site that are almost impossible for a malicious actor to guess.
+
+Because of their importance, you should *never* share your WordPress salts and security keys with anyone.
+
+First, get the salts
 
 ```
 curl -s https://api.wordpress.org/secret-key/1.1/salt/
 ```
 
+You'll get back something like this:
 
-Copy the values and open the configuration file
+
+
+
+Then copy  the values and open the configuration file
 
 ```
 nano /var/www/html/wp-config.php
