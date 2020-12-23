@@ -3,7 +3,7 @@ title: 'Maintain multiple sites on a server'
 intro: 'If you''re an agency or a consultant, you might want to manage landing pages for multiple clients. Here''s how you set this up on a Linux, Nginx, MySQL, PHP (LEMP) stack using Ubuntu 18.4.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608760000
+updated_at: 1608760090
 id: 21997066-fb9c-47f9-a5ba-d694cf8d9da1
 ---
 ## A high level view of how this works
