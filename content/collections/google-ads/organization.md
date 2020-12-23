@@ -2,7 +2,7 @@
 title: Organization
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608767419
+updated_at: 1608767481
 intro: |
   In Google Ads, ads and keywords are grouped together into ad groups. Ad groups are in turn grouped together into campaigns, which can themselves be grouped. You set your budget, device and location targeting at the campaign level. 
   
@@ -47,4 +47,4 @@ Google suggest no more than 5-20 keywords per ad group, but it’s a best practi
 
 If you aren’t sure if a particular keyword is going to be strong for your campaign, place it as a broad modified match keyword into an ad group with a few other uncertain keywords. After the campaign has been live for a week or two, you’ll start to understand better which of those keywords are more important for your business. Place those as exact match keywords into their own ad group. 
 
-For example, if you are advertising a mechanic service, you might separate keywords related to auto body work from those related to repair work. In this way you can more easily tailor your overall experience to match the customer’s needs. You can read more about this technique [here](/google-ads/alpha-beta-campaigns/) and [here](/google-ads/single-keyword-ad-groups/).
+For example, if you are advertising a mechanic service, you might separate keywords related to auto body work from those related to repair work. In this way you can more easily tailor your overall experience to match the customer’s needs. You can read more about this technique [here](/google-ads/alpha-beta-campaign-structure/) and [here](/google-ads/single-keyword-ad-groups/).
