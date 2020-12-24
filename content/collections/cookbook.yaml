@@ -17,5 +17,6 @@ structure:
           entry: 21997066-fb9c-47f9-a5ba-d694cf8d9da1
     -
       entry: 92d01330-9d11-4953-a5a7-26e421a8edd1
-    -
-      entry: 86f77b45-d143-4e90-b1a0-86aaa45c3a80
+      children:
+        -
+          entry: 86f77b45-d143-4e90-b1a0-86aaa45c3a80
