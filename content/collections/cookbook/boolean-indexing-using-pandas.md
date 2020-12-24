@@ -6,7 +6,7 @@ intro: |
   Using booleans in data is usually a two-step process: the first step is to evaluate the series and identify which cell is true and which is false relative to the given boolean. The second step is to filter the series based on  the boolean result.
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608768825
+updated_at: 1608768911
 id: 86f77b45-d143-4e90-b1a0-86aaa45c3a80
 ---
 ## Operators
