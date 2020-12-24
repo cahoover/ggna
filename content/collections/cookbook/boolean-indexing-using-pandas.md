@@ -6,7 +6,7 @@ intro: |
   Using booleans in data is usually a two-step process: the first step is to evaluate the series and identify which cell is true and which is false relative to the given boolean. The second step is to filter the series based on  the boolean result.
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608836968
+updated_at: 1608837042
 id: 86f77b45-d143-4e90-b1a0-86aaa45c3a80
 ---
 ## Operators
@@ -26,24 +26,29 @@ id: 86f77b45-d143-4e90-b1a0-86aaa45c3a80
 
 Consider the following simple dataframe, which samples four people associated with the number of times the person has seen Star Wars:
 
-![boolean 1](/img/cookbook/pandas/boolean1.png)
+![boolean 1](/img/cookbook/python/boolean1.png)
 
 Let's establish a boolean to evaluate which people have see the film fewer than 10 times?
 
+```python
 evaluation = df['number'] < 10
+```
 What this does is evaluate every entry in the column 'number', compare it with the boolean, and place the result in the series "evaluation." Now we have evaluation, a series that evaluates the truthiness of the boolean
 
-![boolean 2](/img/cookbook/pandas/boolean2.png)
+![boolean 2](/img/cookbook/python/boolean2.png)
 
 The second step is to use this true/false evaluation as a filter, creating a new series populated by values that are true.
 
+```python
 deprived_persons = df['evaluation']
-
-![boolean 3](/img/cookbook/pandas/boolean3.png)
+```
+![boolean 3](/img/cookbook/python/boolean3.png)
 
 Now we have a new series called deprived\_persons that contains two rows. If we like, we can filter just one column:
 
+```python
 deprived_persons = df['evaluation', "name"]
+```
 
 ## Selecting specific data
 
