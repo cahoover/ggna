@@ -6,7 +6,7 @@ intro: |
   Using booleans in data is usually a two-step process: the first step is to evaluate the series and identify which cell is true and which is false relative to the given boolean. The second step is to filter the series based on  the boolean result.
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608837042
+updated_at: 1608837115
 id: 86f77b45-d143-4e90-b1a0-86aaa45c3a80
 ---
 ## Operators
@@ -24,7 +24,7 @@ id: 86f77b45-d143-4e90-b1a0-86aaa45c3a80
 
 ## Filtering a dataframe
 
-Consider the following simple dataframe, which samples four people associated with the number of times the person has seen Star Wars:
+Consider the following simple dataframe, which samples four people associated with the number of times the person has seen "Star Wars":
 
 ![boolean 1](/img/cookbook/python/boolean1.png)
 
@@ -54,12 +54,15 @@ deprived_persons = df['evaluation', "name"]
 
 Select all rows whose country value is either Brazil or Venezuela
 
+```python
 brazil_venezuela = f500[(f500["country"] == "Brazil") | (f500["country"] == "Venezuela")]
+```
 
 Select the first five companies in the Technology sector for which the country is not the Germany
 
+```python
 outside_Germany = df[ ~(df["country"] == "Germany") & (df["sector"] == "Technology")].head(5)
-
+```
 
 ## Changing values based on a boolean index
 
