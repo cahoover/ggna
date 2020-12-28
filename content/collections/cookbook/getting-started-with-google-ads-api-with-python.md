@@ -3,7 +3,7 @@ title: 'Getting started with Google Ads API with python'
 intro: 'Getting started with the Google Ads API can sometimes be a frustrating experience. There''s lots of steps, and the online tutorials can be hard to follow. Here we try to describe the process step by step in one fell swoop.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1608838820
+updated_at: 1609195543
 id: 40264d8b-7691-42b7-a2e5-afb147dfc3f8
 ---
 Don't get discouraged. It's a lot, but you'll get there. Here's what we're going to do:
@@ -34,33 +34,33 @@ There are two types of Google Ads accounts.
 
 Manager accounts are only for managing regular accounts, you can't use them to create or manage ads. For example, if you're a marketing agency you will own two accounts: a regular account to manage your own agency's ads, and a manager account to manage ads on behalf of your clients.
 
-If you don't already have a manager account, you'll need to set one up. You can do that from the [Google Ads Manager Homepage].
+If you don't already have a manager account, you'll need to set one up. You can do that from the [Google Ads Manager Homepage](https://ads.google.com/home/tools/manager-accounts/).
 
 ## Get a developer token
 Everyone needs multiple credentials to use the API, and a developer token is the first. It's easy to get. Log into your Manager account and navigate to TOOLS & SETTINGS > SETUP > API Center. (The API Center option will appear only for Google Ads Manager Accounts.)
 
 
 
-(img)
+![GetToken1](/img/cookbook/google-ads-api/GetToken1.png)
 
 
 
 Fill out the form, accept the terms and conditions, and submit. Make sure you use a real email address that you check regularly. Once your token is granted, it'll appear as a string of numbers and letters in the API Center. It's the part that's fuzzed out in the image below.
 
-(img)
+![GetToken2](/img/cookbook/google-ads-api/GetToken2.png)
 
 
 
 Copy this value and paste it somewhere you can access it later, like a text editor.
 
 ## Set up a Google Ads TEST Manager account
-Initially Google will not provide you API access to live-in-production accounts. If you want to work with the API you'll need a non-production test account. To do that, you need to again create an MCC by going back to the [Google Ads Manager Homepage] and create a second manager account using the same email address as your first manager account.
+Initially Google will not provide you API access to live-in-production accounts. If you want to work with the API you'll need a non-production test account. To do that, you need to again create an MCC by going back to the [Google Ads Manager Homepage](https://ads.google.com/home/tools/manager-accounts/) and create a second manager account using the same email address as your first manager account.
 
 This will create a test account for you, which is easy to spot because of the red "test account" badge:
 
 
 
-(img)
+![TestAccount1](/img/cookbook/google-ads-api/TestAccount1.png)
 
 
 
@@ -70,7 +70,7 @@ The online instructions say to create test accounts "using the Google UI," which
 
 
 
-(img)
+![TestAccount2](/img/cookbook/google-ads-api/TestAccount2.png)
 
 
 
@@ -78,7 +78,7 @@ The online instructions say to create test accounts "using the Google UI," which
 
 
 
-(img)
+![TestAccount3](/img/cookbook/google-ads-api/TestAccount3.png)
 
 
 
@@ -89,7 +89,7 @@ Copy the regular test account number and paste the value somewhere accessible, l
 ## Create a test campaign in your test account
 Enter into your regular test account by clicking The link in the upper left of your Manager account:
 
-(img)
+![TestCampaign1](/img/cookbook/google-ads-api/TestCampaign1.png)
 
 
 
@@ -97,7 +97,7 @@ I created three regular accounts, but it doesn't really matter how many you crea
 
 Create a campaign by clicking campaigns in the left sidebar and then the + link.
 
-(img)
+![TestCampaign2](/img/cookbook/google-ads-api/TestCampaign2.png)
 
 
 
@@ -110,12 +110,12 @@ Instead, and this is true, Google suggests that you download data from a product
 ## Set up your Google Cloud project
 Did I mention this was a multi step process? To use the API, you'll need to create a Google Cloud project, enable the Google Ads API within it, and set up credentials.
 
-To start, sign into [Google Cloud] with the same account as your Manager Account.
+To start, sign into [Google Cloud](https://console.cloud.google.com/) with the same account as your Manager Account.
 
 ### Create a Google Cloud project
 In the upper left, select the project you want to use with the Google Ads API. If you don't have a project, click New Project.
 
-(img)
+![Cloud1](/img/cookbook/google-ads-api/Cloud1.png)
 
 
 
@@ -125,19 +125,19 @@ If you are prompted for billing information at any time (and it's likely you wil
 
 Make sure your project is selected, and click APIs and Services at the left
 
-(img)
+![Cloud2](/img/cookbook/google-ads-api/Cloud2.png)
 
 
 
 Click the + API and Services link at the top of the page that opens
 
-(img)
+![Cloud2a](/img/cookbook/google-ads-api/Cloud2a.png)
 
 
 
 Search for Google Ads. Select it when it appears and click the ENABLE button.  When you're asked for the application type, you'll probably want to select Installed App (select Web App if you are building a platform that people will use to access their account, which is very unlikely if you're just getting started).
 
-(img)
+![Cloud3](/img/cookbook/google-ads-api/Cloud3.png)
 
 
 
@@ -145,19 +145,19 @@ Search for Google Ads. Select it when it appears and click the ENABLE button.  W
 
 Click the API and Services again, this time selecting credentials.
 
-(img)
+![Cloud4](/img/cookbook/google-ads-api/Cloud4.png)
 
 
 
 On the Credentials screen, click CREATE CREDENTIALS, then select OAuth client ID.
 
-(img)
+![Cloud5](/img/cookbook/google-ads-api/Cloud5.png)
 
 
 
 For the type, select "Other"
 
-(img)
+![Cloud6](/img/cookbook/google-ads-api/Cloud6.png)
 
 
 
@@ -165,13 +165,13 @@ Two credentials will be created, a client ID and a secret. Copy these values and
 
 Note that once you close this modal, only the Client ID will appear on the main credentials page. To access the secret again, click on the name of your OAUTH credentials:
 
-(img)
+![Cloud7](/img/cookbook/google-ads-api/Cloud7.png)
 
 
 
 And you'll be able to get to your secret:
 
-(img)
+![](/img/cookbook/google-ads-api/Cloud8.png)
 
 
 
@@ -179,7 +179,7 @@ And you'll be able to get to your secret:
 
 On the credentials page, to the far right of your OAUTH credentials, you'll see a download icon. Click this to download your credentials as a JSON.
 
-(img)
+![Cloud9](/img/cookbook/google-ads-api/Cloud9.png)
 
 
 
@@ -189,22 +189,28 @@ The file that's downloaded has a huge name. To make it easy to work with, I sugg
 
 Now it's time to get the Google Ads API on your computer and make a test API call!
 
-First enter into a Python virtual environment. If you're not sure what those are or how to set one up, we have a [handy tutorial available for you].
+First enter into a Python virtual environment. If you're not sure what those are or how to set one up, we have a [handy tutorial available for you](/resources/virtual-environments-in-anaconda).
 
-Once you're in your virtual environment, you'll need to [install setup tools]. It's a prerequisite for the API library.
+Once you're in your virtual environment, you'll need to [install setup tools](https://pypi.org/project/setuptools/). It's a prerequisite for the API library.
 
 Next, install the library using pip. Type this into your terminal
 
+```bash
 pip install google-ads
+```
 
 The library has lots of example code that you might want easy access to, so I like to clone the API library Git repo right into my home library.
 
+```bash
 git clone git@github.com:googleads/google-ads-python.git
+```
 
 Enter the library and run the setup test to ensure everything is installed correctly
 
 
+```bash
 python setup.py test
+```
 
 ## There's one last credential we need to get
 
@@ -212,15 +218,19 @@ I know, right? Think of all this work as a barrier to competition. The final cre
 
 To do this, you'll need to enter the google-ads-python directory that was created when you cloned the git repo, and go into the examples/authentication folder
 
+```bash
 cd examples/authentication
+```
 
-There should be three files in this folder. The one we want is authenticate\_in\_standalone\_application.py. Run it, and add the location of the json file you downloaded from the OAUTH step way up above. Type this into your terminal (changing the /path/to/secrets.json as the actual path and name to your json file).
+There should be three files in this folder. The one we want is authenticate_in_standalone_application.py. Run it, and add the location of the json file you downloaded from the OAUTH step way up above. Type this into your terminal (changing the /path/to/secrets.json as the actual path and name to your json file).
 
+```bash
 ./authenticate_in_standalone_application.py --client_secrets_path=/path/to/secrets.json
+```
 
 This snippet will return a URL, looking something like this:
 
-(img)
+![OAuth](/img/cookbook/google-ads-api/OAuth.png)
 
 
 
@@ -228,26 +238,30 @@ This snippet will return a URL, looking something like this:
 
 Click allow
 
-(img)
+![OAuth1](/img/cookbook/google-ads-api/OAuth1.png)
 
 
 
 An authorization code will be shown to you.
 
-(img)
+![](/img/cookbook/google-ads-api/OAuth2.png)
 
 
 
-Copy and paste the verification code into the command line where you're running the authenticate\_in\_standalone\_application.py example and press enter.
+Copy and paste the verification code into the command line where you're running the authenticate_in_standalone_application.py example and press enter.
 
+```bash
 After approving the token enter the authorization code here: ****
 
+```
 
 The example should complete and display an offline refresh token.
 
 
+```bash
 After approving the token enter the authorization code here: ****
 Your refresh token is: ****
+```
 
 Copy and paste that refresh token somewhere accessible, like a text editor.
 
@@ -263,8 +277,7 @@ By default, the Google Ads API looks for all your credentials in a yaml file in 
 
 Here's what the file looks like. When you've moved the file to the home directory, edit it and add the appropriate information, and save it.
 
-(img)
-
+![](/img/cookbook/google-ads-api/OAuth3.png)
 
 
 ## Make your first API call!
@@ -272,11 +285,17 @@ At long last, here we are. We're goign to make an API call to retrieve the name 
 
 First, let's go the appropriate example script.
 
+```bash
 cd google-ads-python/examples/basic_operations
-Next, we run the get\_campaigns.py, passing the test account number as an argument.
+```
+Next, we run the get_campaigns.py, passing the test account number as an argument.
 
+```bash
 python get_campaigns.py -c1234567890
+```
 
 Notice how I passed the account ID with no spaces or dashes? Now, if all went well with your configuration, you'll get a response, something similar to:
 
+```bash
 Campaign with ID xxxxxxxxxxx and name "Campaign-Name-1" was found.
+```
