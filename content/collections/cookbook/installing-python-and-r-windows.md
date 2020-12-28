@@ -3,7 +3,7 @@ title: 'Installing Python and R (Windows)'
 intro: 'This post describes how to install Python and R on your Windows machine via a special distribution called Anaconda. If you are using a Mac, there''s a separate post that describes installation on OSX.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1609197068
+updated_at: 1609197179
 id: 90a7fcd4-8a8f-4cbb-ac17-b5dd5c238352
 ---
 Because both Python and R are open source languages, people are free to update and extend them in any way they like. Our goal today is to
