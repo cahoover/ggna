@@ -1,9 +1,9 @@
 ---
-title: 'Getting started with Google Ads API with python'
+title: 'Getting started with Google Ads API (Python)'
 intro: 'Getting started with the Google Ads API can sometimes be a frustrating experience. There''s lots of steps, and the online tutorials can be hard to follow. Here we try to describe the process step by step in one fell swoop.'
 template: page
 updated_by: 29b0194a-1fd0-4a23-81bd-0da139f7fa37
-updated_at: 1609195543
+updated_at: 1609196106
 id: 40264d8b-7691-42b7-a2e5-afb147dfc3f8
 ---
 Don't get discouraged. It's a lot, but you'll get there. Here's what we're going to do:
