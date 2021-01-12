@@ -17,34 +17,6 @@ sections:
           type: markdown
           localizable: true
       -
-        handle: bard
-        field:
-          always_show_set_button: false
-          buttons:
-            - h2
-            - h3
-            - bold
-            - italic
-            - unorderedlist
-            - orderedlist
-            - removeformat
-            - quote
-            - anchor
-            - image
-            - table
-          save_html: false
-          toolbar_mode: fixed
-          link_noopener: false
-          link_noreferrer: false
-          target_blank: false
-          reading_time: false
-          fullscreen: true
-          allow_source: true
-          display: Bard
-          type: bard
-          icon: bard
-          listable: hidden
-      -
         handle: content
         field:
           display: Content
