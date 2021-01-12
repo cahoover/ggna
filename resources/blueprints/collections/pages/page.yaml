@@ -4,11 +4,46 @@ sections:
     display: Main
     fields:
       -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
         handle: intro
         field:
           display: Intro
           type: markdown
           localizable: true
+      -
+        handle: bard
+        field:
+          always_show_set_button: false
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          display: Bard
+          type: bard
+          icon: bard
+          listable: hidden
       -
         handle: content
         field:
@@ -29,16 +64,45 @@ sections:
       -
         handle: stage
         field:
-          display: Writing Stage
+          display: 'Writing Stage'
           type: select
           options:
-            0: Gathering Knowledge
-            1: Writing the Draft
-            2: Ready for Editing
-            3: Needs Polish & Humor
-            4: Ready for Feedback
-            5: Complete
+            - 'Gathering Knowledge'
+            - 'Writing the Draft'
+            - 'Ready for Editing'
+            - 'Needs Polish & Humor'
+            - 'Ready for Feedback'
+            - Complete
       -
         handle: nav_title
         field:
           type: text
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+  SEO:
+    display: SEO
+    fields:
+      -
+        handle: seo
+        field:
+          type: seo_pro
+          listable: false
+          display: SEO
