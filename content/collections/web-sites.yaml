@@ -2,7 +2,7 @@ title: 'Web Sites'
 template: default
 layout: layout
 revisions: false
-route: 'web-sites/{ slug }'
+route: 'web-sites/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
