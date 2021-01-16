@@ -7,3 +7,6 @@ sort_dir: asc
 inject:
   seo:
     title: '@seo:Title'
+structure:
+  root: false
+  tree: {  }
