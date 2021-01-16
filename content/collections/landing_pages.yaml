@@ -2,8 +2,11 @@ title: 'Web Sites'
 template: page
 layout: layout
 revisions: false
-route: 'landing-pages/{slug}'
+route: 'websites/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
   future: private
+structure:
+  root: false
+  tree: {  }
