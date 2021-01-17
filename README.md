@@ -1,6 +1,6 @@
 ## General growth and analytics
 
-This is the source of my [website.](https://cahoover.com) site.
+This is the source of my [website.](https://cahoover.com)
 
 ## Based on Statamic
 
