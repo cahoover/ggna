@@ -12,8 +12,6 @@ structure:
   root: false
   tree:
     -
-      entry: 37683437-9890-480b-9add-c3fc5dd93457
-    -
       entry: e19be43c-9cb2-45f1-b19e-4cd3ef91447d
       children:
         -
