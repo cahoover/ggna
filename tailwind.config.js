@@ -38,6 +38,9 @@ module.exports = {
       mint: "1px 1px 0 theme('colors.mint', 'currentColor')",
       'md-mint': "3px 3px 0 theme('colors.mint', 'currentColor')",
       'lg-mint': "5px 5px 0 theme('colors.mint', 'currentColor')",
+      blue: "1px 1px 0 theme('colors.blue-lightest', 'currentColor')",
+      'md-blue': "3px 3px 0 theme('colors.blue-lightest', 'currentColor')",
+      'lg-blue': "5px 5px 0 theme('colors.blue-lightest', 'currentColor')",
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
     },
     colors: {
@@ -63,6 +66,7 @@ module.exports = {
       'highlight': 'FFF3B8',
       'mint': '#b8fff3',
       'cp-bg': '#F1F5F9',
+      'search': '#f4f8fb',
       'grey': {
         100: '#f7fafc',
         200: '#edf2f7',
@@ -77,7 +81,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'display': ['code-saver', 'sans-serif'],
+        'display': ['Inter', 'sans-serif'],
       },
       fontSize: {
         '2xs': '0.6rem',

@@ -50,10 +50,10 @@
         &:before {
             content: '';
             background: url('/img/thrill-detail.svg') no-repeat;
-            height: 35px;
-            width: 70px;
+            height: 50px;
+            width: 90px;
             position: absolute;
-            top: -16px;
+            top: -20px;
             left: -12px;
             z-index: 2;
         }
@@ -195,9 +195,9 @@
 }
 
   > table {
-    @apply w-full text-left table-collapse border shadow-lg-mint mb-8;
+    @apply w-full text-left table-collapse border shadow-lg-blue mb-8;
     th {
-      @apply text-base font-display italic font-normal text-black p-3 bg-mint border-t-4 border-b border-black;
+      @apply text-base font-display italic font-normal text-black p-3 bg-blue-lightest border-t-4 border-b border-black;
     }
     td {
       @apply p-3 border-b border-black text-sm;
@@ -220,7 +220,7 @@
             @apply pl-12 pt-4;
         }
         > blockquote:before {
-            top: 6px;
+            top: -20px;
             left: -35px;
         }
     }

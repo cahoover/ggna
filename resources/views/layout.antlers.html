@@ -13,7 +13,9 @@
     <meta property="og:locale" content="en_US" />
     <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
-    <link rel="stylesheet" href="https://use.typekit.net/ysf3wph.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://use.typekit.net/ysf3wph.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
     <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -23,23 +25,27 @@
 {{ partial:partials/nav }}
 
 <div class="w-full max-w-screen-xl mx-auto pt-12 lg:flex relative" id="top">
-    <div id="side-nav" class="lg:block w-full lg:w-auto flex-1 px-6 pt-1 pb-12 overflow-auto min-h-screen" x-show="showNav">
+    <div id="side-nav" class="lg:block w-1/5 flex-1 px-6 pt-1 pb-12 overflow-auto min-h-screen" x-show="showNav">
         {{ partial:side-nav }}
     </div>
-    <div id="content" class="w-full lg:w-2/4 xl:w-3/5 px-4 lg:px-6 xl:px-12" x-bind:class="{ 'overflow-state': showNav }">
+    {{ unless collection == "pages" }}
+    <div id="content" class="w-full lg:w-3/5 xl:w-3/5 px-4 lg:px-6 xl:px-12" x-bind:class="{ 'overflow-state': showNav }">
         {{ template_content }}
         {{ partial:edit }}
     </div>
-    {{ unless response_code == 404 }}
-    <div class="hidden lg:block lg:w-1/4 xl:w-1/5 px-8 pt-1 relative">
-        <nav class="side-nav sticky top-16">
-            {{ if segment_1 !== "blog" }}
-            <h5>On This Page</h5>
+    <div class="hidden lg:block w-1/5 px-8 pt-1 relative">
+      <nav class="side-nav sticky top-16">
+          <h5>On This Page</h5>
             {{ content | noparse | toc }}
-            {{ /if }}
-        </nav>
+      </nav>
     </div>
     {{ /unless }}
+    {{ if collection == "pages" }}
+    <div id="content" class="w-4/5 px-4 lg:px-6 xl:px-12" x-bind:class="{ 'overflow-state': showNav }">
+        {{ template_content }}
+        {{ partial:edit }}
+    </div>
+    {{ /if }}
 </div>
 
 <div id="site-footer" class="bg-blue-darkest text-blue-lightest font-display italic antialiased text-sm mt-8 p-8 flex items-center justify-between">

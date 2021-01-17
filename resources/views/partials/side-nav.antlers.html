@@ -13,12 +13,14 @@
 
     {{ if segment_1 == 'blog' }}
         {{ partial:side-nav-blog }}
+    {{ elseif segment_1 === 'strategy' }}
+        {{ partial:side-nav-strategy }}
     {{ elseif segment_1 === 'google-ads' }}
         {{ partial:side-nav-google }}
     {{ elseif segment_1 === 'cookbook' }}
         {{ partial:side-nav-cookbook }}
-    {{ elseif segment_1 === 'landing-pages' }}
-        {{ partial:side-nav-landing }}
+    {{ elseif segment_1 === 'web-sites' }}
+        {{ partial:side-nav-web }}
     {{ elseif segment_1 === 'data-science' }}
         {{ partial:side-nav-stats }}
     {{ /if }}
